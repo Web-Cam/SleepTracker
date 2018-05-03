@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<img src = 'polyLogo.png' >
 
 <title> SleepTracker</title>
 <head> Welcome to the Sleep Tracker !
@@ -11,7 +10,7 @@
 
 <body><p>All data form sleep tracker</p></body>
 
-<body> <p id = "park"></p>
+<body> <p id = "sleep"></p>
 
   <script>
 //Script for connecting to sensor   
@@ -22,11 +21,15 @@
 		var text = 
 		`Date : ${data.DATE}
 		<br>
-		Fake Spot 1: ${data.Dummy1}
+		Minutes Asleep: ${data.MINUTES_ASLEEP}
 		<br>
-		Fake Spot 2: ${data.Dummy2}
+		Movement Count: ${data.MOVE_X_DIR}
 		<br>
-		Fake Spot 3: ${data.Dummy3}
+		Body Temp: ${data.BODY_TEMP}
+		<br>
+		Sleep Score: ${data.sleep_score}
+		<br>
+		Daily Tip: ${data.Daily_tip}
 		`;
          var space1 = data.Space1;      
          var dummy1 = data.Dummy1;           
@@ -34,18 +37,13 @@
          var dummy3 = data.Dummy3;           
 
         $(".mypanel").html(text);
-		
-		   
-		var values = [space1,dummy1,dummy2,dummy3];
-		
-
-
+	
 
 
 
 
 		
-		document.getElementById("park").innerHTML = text;
+		document.getElementById("sleep").innerHTML = text;
 		
     });}
 	        window.setInterval($.fn.myFunction,3000);
@@ -61,8 +59,7 @@
 	<body><p>
 	
 	Created by :
-	Jonathan Weber,
-	Bernard S.
+	Jonathan Weber
 	
 	</p></body>
 
